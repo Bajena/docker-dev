@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+docker run -d -p 127.0.0.1:9201:9200 -p 127.0.0.1:9301:9300 --name es-dev -v "$PWD/config/elasticsearch.yml":/usr/share/elasticsearch/config/elasticsearch.yml okulik/elasticsearch -Des.node.name="dev"
+docker run -d -p 127.0.0.1:9200:9200 -p 127.0.0.1:9300:9300 --name es-test -v "$PWD/config/elasticsearch.yml":/usr/share/elasticsearch/config/elasticsearch.yml okulik/elasticsearch -Des.node.name="test"
