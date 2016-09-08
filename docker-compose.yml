@@ -12,7 +12,7 @@ services:
     image: okulik/elasticsearch
     ports:
      - "127.0.0.1:9201:9200"
-     - "127.0.0.1:9301:9200"
+     - "127.0.0.1:9301:9300"
     volumes:
       - "${PWD}/elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml"
 
@@ -20,6 +20,11 @@ services:
     image: okulik/elasticsearch
     ports:
      - "127.0.0.1:9200:9200"
-     - "127.0.0.1:9300:9200"
+     - "127.0.0.1:9300:9300"
     volumes:
      - "${PWD}/elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml"
+
+  redis:
+    image: redis:alpine
+    ports:
+     - "127.0.0.1:6379:6379"
