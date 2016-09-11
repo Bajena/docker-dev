@@ -28,3 +28,19 @@ services:
     image: redis:alpine
     ports:
      - "127.0.0.1:6379:6379"
+
+  memcached:
+    image: memcached:alpine
+    ports:
+     - "127.0.0.1:11211:11211"
+
+  mysql:
+    image: mysql:5
+    ports:
+     - "127.0.0.1:3306:3306"
+    volumes:
+     - "${PWD}/mysql/config/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf"
+     - "/private/tmp:/var/run/mysqld"
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
