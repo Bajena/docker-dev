@@ -11,8 +11,8 @@ services:
     build: ./elasticsearch
     image: okulik/elasticsearch
     ports:
-     - "127.0.0.1:9201:9200"
-     - "127.0.0.1:9301:9300"
+     - "127.0.0.1:9201:9201"
+     - "127.0.0.1:9301:9301"
     volumes:
       - "${PWD}/elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml"
 
